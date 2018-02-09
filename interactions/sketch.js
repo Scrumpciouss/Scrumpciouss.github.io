@@ -17,25 +17,30 @@ function setup() {
 //   rect(mouseX, mouseY, (50, 200), random(0, 200));
 // }
 
-function deviceShaken() {
-  fill(2);
+function keyPressed() {
+  if (key === 'd' || key === 'D') {
+  fill(255, 0, 0);
   textFont("Arial");
   textAlign(CENTER);
-  textSize(32);
-  text("shaken, not stirred.", width / 2, height / 2);
+  textSize(150);
+  text("YOU DIED", width / 2, height / 2);
+  }
 }
 
 function mousePressed() {
   if (mouseButton === LEFT) {
     fill(random(255), random(255), random(255));
     rect(mouseX, mouseY, random(50, 150), random(50, 150));
-  }
-  else if (mouseButton === RIGHT){
+  } else if (mouseButton === RIGHT) {
     ellipse(mouseX, mouseY, random(50, 150), random(50, 150));
   }
 }
 
-function keypressed(){
-  if (key === 'w' || key ==='W') {}
-    background(0);
+function keyPressed() {
+  if (key === 'w' || key === 'W') {
+  background(0);
+  }
+}
+function day() {
+  text('Current day /n' +  5, 50)
 }
