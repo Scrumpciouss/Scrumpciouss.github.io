@@ -18,7 +18,7 @@ function setup() {
 // }
 
 function keyPressed() {
-  if (key === 'd' || key === 'D') {
+  if (key === 'd' || key === 'D')) {
   fill(255, 0, 0);
   textFont("Arial");
   textAlign(CENTER);
