@@ -18,12 +18,12 @@ function setup() {
 // }
 
 function keyPressed() {
-  if (key === 'd' || key === 'D')) {
-  fill(255, 0, 0);
-  textFont("Arial");
-  textAlign(CENTER);
-  textSize(150);
-  text("YOU DIED", width / 2, height / 2);
+  if (key === 'd' || key === 'D') {
+    fill(255, 0, 0);
+    textFont("Arial");
+    textAlign(CENTER);
+    textSize(150);
+    text("You have found the treasure", width / 2, height / 2);
   }
 }
 
@@ -31,16 +31,20 @@ function mousePressed() {
   if (mouseButton === LEFT) {
     fill(random(255), random(255), random(255));
     rect(mouseX, mouseY, random(50, 150), random(50, 150));
-  } else if (mouseButton === RIGHT) {
+  }
+  else if (mouseButton === RIGHT) {
     ellipse(mouseX, mouseY, random(50, 150), random(50, 150));
   }
 }
 
 function keyPressed() {
   if (key === 'w' || key === 'W') {
-  background(0);
+    background(0);
+else  if (key === 'y' || key === 'Y')
+    text('Current day /n' + 5, 50
   }
 }
+
 function day() {
-  text('Current day /n' +  5, 50)
+  )
 }
