@@ -17,15 +17,7 @@ function setup() {
 //   rect(mouseX, mouseY, (50, 200), random(0, 200));
 // }
 
-function keyPressed() {
-  if (key === 'd' || key === 'D') {
-    fill(255, 0, 0);
-    textFont("Arial");
-    textAlign(CENTER);
-    textSize(150);
-    text("You have found the treasure", width / 2, height / 2);
-  }
-}
+
 
 function mousePressed() {
   if (mouseButton === LEFT) {
@@ -40,11 +32,19 @@ function mousePressed() {
 function keyPressed() {
   if (key === 'w' || key === 'W') {
     background(0);
-else  if (key === 'y' || key === 'Y')
-    text('Current day /n' + 5, 50
-  }
+} else  if (key === 'y' || key === 'Y'){
+    // fill(255, 0, 0);
+    // textFont("Arial");
+    // textAlign(CENTER);
+    // textSize(100)
+    // text('Current day /n' + 5, 50)
+    print("hi")
 }
-
-function day() {
-  )
+  if (key === 'd' || key === 'D') {
+    fill(255, 0, 0);
+    textFont("Arial");
+    textAlign(CENTER);
+    textSize(100);
+    text("You have found the treasure", width / 2, height / 2);
+  }
 }
