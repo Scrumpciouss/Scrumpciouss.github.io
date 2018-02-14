@@ -1,6 +1,6 @@
 // circles and rects demo
 // Feb 12, 2018
-// Dan Schellenberg
+// Aaron Phillips
 
 let mode;
 

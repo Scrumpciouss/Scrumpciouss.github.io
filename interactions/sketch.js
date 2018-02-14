@@ -33,12 +33,12 @@ function keyPressed() {
   if (key === 'w' || key === 'W') {
     background(0);
 } else  if (key === 'y' || key === 'Y'){
-    // fill(255, 0, 0);
-    // textFont("Arial");
-    // textAlign(CENTER);
-    // textSize(100)
-    // text('Current day /n' + 5, 50)
-    print("hi")
+     fill(255, 0, 0);
+     textFont("Arial");
+     textAlign(CENTER);
+     textSize(100)
+     text('Current day /n' + 5, 50)
+
 }
   if (key === 'd' || key === 'D') {
     fill(255, 0, 0);
