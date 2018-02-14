@@ -1,3 +1,7 @@
+// gloabal interactions
+let redAmount ;
+let redSpeed = 3;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   document.addEventListener("contextmenu", event => event.preventDefault())
@@ -32,13 +36,6 @@ function mousePressed() {
 function keyPressed() {
   if (key === 'w' || key === 'W') {
     background(0);
-} else  if (key === 'y' || key === 'Y'){
-     fill(255, 0, 0);
-     textFont("Arial");
-     textAlign(CENTER);
-     textSize(100)
-     text('Current day /n' + 5, 50)
-
 }
   if (key === 'd' || key === 'D') {
     fill(255, 0, 0);
@@ -47,4 +44,11 @@ function keyPressed() {
     textSize(100);
     text("You have found the treasure", width / 2, height / 2);
   }
+}
+function background() {
+  redAmount = (redAmount + 1 ) % 255
+  redAmount += 1;
+  redAmount = constrain(redAmount, 0, 255);
+  if (redAmount === 255) {
+    redAmount = 0
 }
