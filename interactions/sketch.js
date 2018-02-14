@@ -1,5 +1,5 @@
 // gloabal interactions
-let redAmount ;
+let redAmount;
 let redSpeed = 3;
 
 function setup() {
@@ -25,18 +25,29 @@ function setup() {
 
 function mousePressed() {
   if (mouseButton === LEFT) {
-    fill(random(255), random(255), random(255));
-    rect(mouseX, mouseY, random(50, 150), random(50, 150));
+    rect(200, 150, width / 2, height / 2,)
+    fill(redAmount, 0, 0, )
+    redAmount += redSpeed;
+    redAmount = constrain(redAmount, 0, 255);
+    if (redAmount === 255 || redAmount === 0) {
+      redSpeed *= -1;
+      rect(mouseX, mouseY, random(50, 150), random(50, 150));
+
+    }
+    fill(redAmount, 0, 0);
   }
   else if (mouseButton === RIGHT) {
+    fill(redAmount, 0, 0);
     ellipse(mouseX, mouseY, random(50, 150), random(50, 150));
+
+
   }
 }
 
 function keyPressed() {
   if (key === 'w' || key === 'W') {
     background(0);
-}
+  }
   if (key === 'd' || key === 'D') {
     fill(255, 0, 0);
     textFont("Arial");
@@ -44,11 +55,4 @@ function keyPressed() {
     textSize(100);
     text("You have found the treasure", width / 2, height / 2);
   }
-}
-function background() {
-  redAmount = (redAmount + 1 ) % 255
-  redAmount += 1;
-  redAmount = constrain(redAmount, 0, 255);
-  if (redAmount === 255) {
-    redAmount = 0
 }
