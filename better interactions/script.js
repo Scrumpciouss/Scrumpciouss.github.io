@@ -3,8 +3,7 @@ let isMovingUp, isMoveingDown, isMovingleft, isMovingRight;
 let redAmount;
 let gravity;
 let x, y, radius;
-
-
+let beginShape;
 
 
 
@@ -21,29 +20,37 @@ function setup() {
   y = height / 2;
   radius = 50;
 
+  // shapes
+  // beginShape();
+  // vertex(30, 20);
+  // vertex(85, 20);
+  // vertex(85, 75);
+  // vertex(30, 75);
+  // endShape(CLOSE);
 }
+
+
 
 function draw() {
   background(255);
-
+  ellipse(width/2,height/2,100,200);
 
 }
 
-// function moveStickman() {
-//   if (isMovingUp) {
-//     y -= 10;
-//   }
-//   else (isMovingleft) {
-//     x -= 10;
-//   }
-//   if (isMovingRight){
-//     x += 10;
-//   }
-//   else (isMoveingDown) {
-//     y =+ 10;
-//   }
-//
-// }
+function moveStickman() {
+  if (isMovingUp) {
+    y -= 10;
+  }
+  else if (isMovingleft) {
+    x -= 10;
+  }
+  if (isMovingRight) {
+    x += 10;
+  }
+  else if (isMoveingDown) {
+    y += 10;
+  }
+}
 
 function keyPressed() {
 
@@ -86,7 +93,6 @@ function keyReleased() {
 }
 
 function drawStickman(x, y) {
-  // constrain to left side of screen
   x = constrain(x, 0, width / 2);
 
   //body
@@ -113,6 +119,5 @@ function drawStickman(x, y) {
   // Legs\
   line(x, y + 100, x - 50, y + 150);
   line(x, y + 100, x + 50, y + 150);
-
-
 }
+// constrain to left side of screen
