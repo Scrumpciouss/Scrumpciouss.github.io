@@ -7,13 +7,13 @@
 // function at processing.org/reference.
 // global variables
 let state;
-
+let timeNow;
 function setup() {
   createCanvas(600, 600);
 }
 
 function draw() {
-  background(255);
+  
   drawOutlineOfLights();
   fillInsideLights();
 }
@@ -32,6 +32,7 @@ function drawOutlineOfLights() {
 }
 
 function fillInsideLights() {
+
   if (state === 1) {
     fill(255, 0, 0, )
     ellipse(width / 2, height / 2 - 65, 50, 50); //top
