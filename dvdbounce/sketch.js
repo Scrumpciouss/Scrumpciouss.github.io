@@ -6,7 +6,7 @@
 let x, y, radius;
 let dx, dy;
 let dvd, dvdColor;
-
+let state;
 function preload() {
   dvd = loadImage("images/logo.png");
 }
@@ -43,10 +43,16 @@ function moveThing() {
   }
 }
 
+
 function displayThing() {
   fill(0);
   // ellipse(x, y, radius * 2, radius * 2);
   imageMode(CENTER);
   tint(dvdColor);
   image(dvd, x, y);
+}
+
+function mousePressed() {
+  if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
+    button = !button;
 }
