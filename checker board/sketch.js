@@ -1,36 +1,25 @@
 let boxSize;
 
 function setup() {
-  if (windowWidth < windowHeight) {
-      createCanvas(windowWidth, windowWidth);
-}
-else {
-  createCanvas(windowHeight, windowHeight)
-}
-  boxSize = width / 8;
-  isFilled = false;
+    createCanvas(windowWidth, windowWidth);
+    noCursor()
 
 }
 
 function draw() {
-  background(255);
-  displayBoard()
+  background(0);
+  displayDots()
 
 }
 
-function displayBoard() {
-  for (i = 0; i < 8; i++) {
-    for (let j = 0; j < 8; j++) {
-      if (isFilled) {
-        fill(0);
-      }
-      else {
-        fill(255);
-      }
-      rect(boxSize * j, boxSize * i, boxSize, boxSize);
-      isFilled = !isFilled;
+function displayDots() {
+  let pointSpacing = 100;
+  for (x = pointSpacing; x < width; x+= pointSpacing) {
+    for (let y = pointSpacing; y < height; y+= pointSpacing) {
+      fill(255);
+      ellipse(x, y, 4, 4);
+      stroke(255, 120);
+      line(x, y, mouseX, mouseY);
     }
-    isFilled = !isFilled;
   }
-
 }
