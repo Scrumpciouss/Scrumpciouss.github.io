@@ -1,34 +1,41 @@
-// p5js template project - replace with project title
-// Dan Schellenberg - replace with your name
-// Feb 2, 2018 - replace with the date
+// state variable assignment - replace with project title
+// Aaron Phillips - replace with your name
+// March 12, 2018 - replace with the date
 
 // global variables
-let gear;
+let state;
 
-// the preload function guarentees that the code inside the function is
-// executed before the rest of the program runs -- helpful for things
-// like loading images (since JS is asynchronous)
-function preload() {
-  gear = loadImage("images/gear.png");
-}
 
-// the setup function will only run once (before the draw loop begins)
-// this is where you want to set up the environment (size of canvas, etc)
+
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  x = width / 2;
+  y = height / 2;
+  radius = 50;
+  dx = random(2, 5)
+  dy = random(2, 5)
+  fill(0)
 }
 
 function draw() {
   background(255);
+ if (state === 1) {
+   displayMenuScreen();
+ }
+// if (state === 2)
+//   startGame();
+//   displayObjects();
+//
+// }
+// y click the play button to startGame
+function displayMenuScreen() {
+  let buttonWidth = 400;
+  let buttonHeight = 200
+  let leftSide = width / 2 - buttonWidth / 2;
+  let topSide = height / 2 - buttonHeight / 2;
+  let rightSide = leftSide + buttonWidth;
+  let bottomSide = topSide + buttonHeight;
 
-  image(gear, 0, 0);
-
-  stroke(0);
-  line(0, 0, 200, 200);
-
-  fill(0, 255, 0, 100);
-  noStroke();
-
-  rect(mouseX, mouseY, 100, 300);
-  ellipse(400, 150, 300, 200);
 }
