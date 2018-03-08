@@ -39,7 +39,7 @@ function displayMenuScreen() {
   let topSide = height / 2 - buttonHeight / 2;
   let rightSide = leftSide + buttonWidth;
   let bottomSide = topSide + buttonHeight;
-
+  rect(leftSide, rightSide, topSide, buttonWidth, buttonHeight);
 
   fill(0);
   if (mouseX >= leftSide && mouseX <= rightSide && mouseY >= topSide && mouseY <= bottomSide) {
@@ -48,5 +48,5 @@ function displayMenuScreen() {
   if (mouseIsPressed) {
     state = 2;
   }
-  rect(leftSide, rightSide, topSide, buttonWidth, buttonHeight);
+
 }
