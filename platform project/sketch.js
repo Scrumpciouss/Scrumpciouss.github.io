@@ -44,9 +44,10 @@ function displayMenuScreen() {
   fill(0);
   if (mouseX >= leftSide && mouseX <= rightSide && mouseY >= topSide && mouseY <= bottomSide) {
     fill(125);
-  }
-  if (mouseIsPressed) {
-    state = 2;
+    if (mouseIsPressed) {
+      state = 2;
+    }
   }
 
+  rect(leftSide, rightSide, buttonWidth, buttonHeight);
 }
