@@ -19,6 +19,6 @@ function draw() {
   // follow mouse
   ball.x = mouseX;
   ball.y = mouseY;
-  
-  ellipse(ball.x, ball.y, ball.radius, ball.radius)
+
+  ellipse(ball.x, ball.y, ball.radius, ball.radius);
 }
