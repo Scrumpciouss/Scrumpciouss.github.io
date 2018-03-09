@@ -11,8 +11,8 @@ let dx, dy;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  x = 250;
-  y = 250;
+  x = width / 2;
+  y = height / 2;
   radius = 50;
   dx = random(2, 5);
   dy = random(2, 5);
@@ -25,6 +25,7 @@ function draw() {
 
   if (state === 1) {
     displayMenuScreen();
+
   }
 // if (state === 2)
 //   startGame();
@@ -39,9 +40,18 @@ function displayMenuScreen() {
   let topSide = height / 2 - buttonHeight / 2;
   let rightSide = leftSide + buttonWidth;
   let bottomSide = topSide + buttonHeight;
-  rect(leftSide, rightSide, topSide, buttonWidth, buttonHeight);
 
-  fill(0);
+  rect(leftSide, topSide, buttonWidth, buttonHeight);
+  fill(0, 255);
+
+  textAlign(400,200);
+  fill(255);
+  textFont("Arial");
+  textAlign(CENTER);
+  textSize(40);
+  text("Click to Play Game", 600, 400);
+
+
   if (mouseX >= leftSide && mouseX <= rightSide && mouseY >= topSide && mouseY <= bottomSide) {
     fill(125);
     if (mouseIsPressed) {
@@ -49,5 +59,5 @@ function displayMenuScreen() {
     }
   }
 
-  rect(leftSide, rightSide, buttonWidth, buttonHeight);
+
 }
