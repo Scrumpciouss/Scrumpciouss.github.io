@@ -6,6 +6,7 @@
 let state;
 let x, y, radius;
 let dx, dy;
+let ball;
 // let ball, ballColour;
 
 
@@ -27,6 +28,10 @@ function draw() {
     displayMenuScreen();
 
   }
+  if (state === 2){
+    displayGame();
+    moveObject();
+  }
 // if (state === 2)
 //   startGame();
 //   displayObjects();
@@ -44,12 +49,14 @@ function displayMenuScreen() {
   rect(leftSide, topSide, buttonWidth, buttonHeight);
   fill(0, 255);
 
+  text("Click to Play Game", 800, 400);
   textAlign(400,200);
   fill(255);
   textFont("Arial");
   textAlign(CENTER);
   textSize(40);
-  text("Click to Play Game", 600, 400);
+  // fill(20);
+
 
 
   if (mouseX >= leftSide && mouseX <= rightSide && mouseY >= topSide && mouseY <= bottomSide) {
@@ -59,5 +66,17 @@ function displayMenuScreen() {
     }
   }
 
+}
+function moveObject() {
+  x += dx;
+  y += dy;
 
+  // if object has hit something
+  if (y + ball.height / 2 >= height || y - ball.height / 2 <= 0){
+    dy = dy * -1;
+  }
+}
+function displayGame() {
+  fill(0);
+  ellipse(x,y, radius * 2, radius * 2);
 }
