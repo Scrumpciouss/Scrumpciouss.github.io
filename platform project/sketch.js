@@ -6,10 +6,12 @@
 let state;
 let x, y, radius;
 let dx, dy;
-let ball;
+let ball, ballColour;
 // let ball, ballColour;
 
-
+function preload(){
+  
+}
 function setup() {
   createCanvas(windowWidth, windowHeight);
   x = width / 2;
@@ -17,6 +19,7 @@ function setup() {
   radius = 50;
   dx = random(2, 5);
   dy = random(2, 5);
+  ballColour = color(0);
   state = 1;
 
 }
@@ -37,7 +40,7 @@ function draw() {
 //   displayObjects();
 //
 }
-// y click the play button to startGame
+//  click the play button to startGame
 function displayMenuScreen() {
   let buttonWidth = 400;
   let buttonHeight = 200;
@@ -46,24 +49,17 @@ function displayMenuScreen() {
   let rightSide = leftSide + buttonWidth;
   let bottomSide = topSide + buttonHeight;
 
-  rect(leftSide, topSide, buttonWidth, buttonHeight);
+
   fill(0, 255);
 
-  text("Click to Play Game", 800, 400);
-  textAlign(400,200);
-  fill(255);
-  textFont("Arial");
-  textAlign(CENTER);
-  textSize(40);
+
   // fill(20);
-
-
-
   if (mouseX >= leftSide && mouseX <= rightSide && mouseY >= topSide && mouseY <= bottomSide) {
     fill(125);
     if (mouseIsPressed) {
       state = 2;
     }
+    rect(leftSide, topSide, buttonWidth, buttonHeight);
   }
 
 }
@@ -74,6 +70,10 @@ function moveObject() {
   // if object has hit something
   if (y + ball.height / 2 >= height || y - ball.height / 2 <= 0){
     dy = dy * -1;
+    ballColour = color(random(255), random(255));
+  }
+  if (x + ball.width / 2 >= height || x - ball.width / 2 <= 0){
+    dx = dx * -1;
   }
 }
 function displayGame() {
