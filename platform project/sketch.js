@@ -10,7 +10,7 @@ let ball, ballColour;
 // let ball, ballColour;
 
 function preload(){
-  
+
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -32,6 +32,7 @@ function draw() {
 
   }
   if (state === 2){
+    background(255);
     displayGame();
     moveObject();
   }
