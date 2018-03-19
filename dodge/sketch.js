@@ -3,13 +3,16 @@
 // Feb 15, 2018
 
 // global variables
+let heights= [];
+let numberOfRectangles = 100;
 let x, y, radius;
 let dx, dy;
 let isMovingUp, isMovingDown, isMovingRight, isMovingLeft;
 let state;
+// let characterImage;
 
 function preload() {
-
+  // characterImage = loadImage("images/nameOfFile.png");
 }
 
 function setup() {
@@ -29,8 +32,9 @@ function draw() {
     displayStartScreen();
   }
   if (state === 2) {
-
+    loadTerrian();
   }
+  // image(characterImage, 0, 0);
 }
 
 function displayStartScreen() {
@@ -79,5 +83,13 @@ function keyReleased(){
   }
   if (key === "s" || key === "S") {
     isMovingDown = false;
+  }
+}
+function loadTerrian() {
+  let rectWidth = width / numberOfRectangles;
+  rectMode(CORNERS);
+  fill(0);
+  for (let i=0; i<numberOfRectangles; i++){
+    rect(i*rectWidth, height, (i+1)*rectWidth, height - heights[i]);
   }
 }
