@@ -3,11 +3,7 @@
 // Feb 15, 2018
 
 // global variables
-let heights= [];
-let numberOfRectangles = 100;
-let x, y, radius;
-let dx, dy;
-let isMovingUp, isMovingDown, isMovingRight, isMovingLeft;
+let backgroundMusic
 let state;
 // let characterImage;
 
@@ -32,7 +28,10 @@ function draw() {
     displayStartScreen();
   }
   if (state === 2) {
-    loadTerrian();
+    loadMusicSelect1();
+    loadMusicSelect2();
+    loadMusicSelect3();
+    loadMusicSelect4();
   }
   // image(characterImage, 0, 0);
 }
@@ -56,40 +55,14 @@ function displayStartScreen() {
   rect(leftSide, topSide, buttonWidth, buttonHeight);
 }
 
-function keyPressed() {
-  if (key === "w" || key === "W") {
-    isMovingUp = true;
-  }
-  if (key === "a" || key === "A") {
-    isMovingLeft = true;
-  }
-  if (key === "d" || key === "D") {
-    isMovingRight = true;
-  }
-  if (key === "s" || key === "S") {
-    isMovingDown = true;
-  }
-}
-
-function keyReleased(){
-  if (key === "w" || key === "W") {
-    isMovingUp = false;
-  }
-  if (key === "a" || key === "A") {
-    isMovingLeft = false;
-  }
-  if (key === "d" || key === "D") {
-    isMovingRight = false;
-  }
-  if (key === "s" || key === "S") {
-    isMovingDown = false;
-  }
-}
-function loadTerrian() {
-  let rectWidth = width / numberOfRectangles;
-  rectMode(CORNERS);
+function loadMusicSelect1() {
+  let buttonWidth = 400;
+  let buttonHeight = 200;
+  let leftSide = width / 2 - buttonWidth / 2;
+  let topSide = height / 2 - buttonHeight / 2;
+  let rightSide = leftSide + buttonWidth;
+  let bottomSide = topSide + buttonHeight;
   fill(0);
-  for (let i=0; i<numberOfRectangles; i++){
-    rect(i*rectWidth, height, (i+1)*rectWidth, height - heights[i]);
-  }
+  if (mouseX >= leftSide && mouseX <= rightSide && mouseY >= topSide && mouseY <= bottomSide) {
+    fill(125);
 }
