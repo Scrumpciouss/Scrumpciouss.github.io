@@ -9,7 +9,7 @@ let space;
 // let characterImage;
 
  function preload() {
-    space = loadImage("images/orbit.blend")
+    // space = loadImage("images/orbit.blend")
 
 
 //   backgroundMusic = loadSound("assests/Rise of spirit.mp3");
@@ -19,7 +19,7 @@ let space;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  space(space,0,0);
+  // space(space,0,0);
   // x = width / 2;
   // y = height / 2;
    // backgroundMusic.setVolume(0.6);
@@ -71,7 +71,8 @@ function displayMusicPlaylist() {
   if (mouseX >= leftSide && mouseX <= rightSide && mouseY >= topSide && mouseY <= bottomSide) {
     // backgroundMusic.play();
     fill(130);
-    backgroundMusic = loadSound("assests/Heroic Demise (New).mp3");
+      // backgroundMusic = LoadSound("music/happy.mp3");
+    //backgroundMusic = loadSound("assets/Heroic Demise (New).mp3");
 
 
 
