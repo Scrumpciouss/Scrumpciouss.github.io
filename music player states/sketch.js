@@ -1,4 +1,4 @@
-// DVD Bounce - The Office Shoutout
+// Music and images
 // Dan Schellenberg
 // Feb 15, 2018
 
@@ -12,7 +12,7 @@ function preload() {
   solar = loadImage("images/solar.jpeg")
 
 
-  backgroundMusic = loadSound("music/happy.mp3");
+  backgroundMusic = loadSound("music/8Bit Theme.mp3");
 
 
 }
