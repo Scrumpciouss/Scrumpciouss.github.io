@@ -1,4 +1,4 @@
-// Music and images
+// DVD Bounce - The Office Shoutout
 // Dan Schellenberg
 // Feb 15, 2018
 
@@ -62,7 +62,7 @@ function displayStartScreen() {
 
   rect(leftSide, topSide, buttonWidth, buttonHeight);
 }
-// Just a little heads up don't listen with headphones
+// Just a little heads up don't wear headphones
 function displayMusicPlaylist() {
   image(solar, 0, 0);
   let buttonWidth = 400;
