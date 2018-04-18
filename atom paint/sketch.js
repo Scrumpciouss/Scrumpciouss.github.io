@@ -22,11 +22,11 @@ function setup() {
   autoPlay = false;
 }
 
-function autoPlayRequired() {
-  if (autoPlay && frameCount % 10 === 0){
-    nextTurn();
-  }
-}
+// function autoPlayRequired() {
+//   if (autoPlay && frameCount % 10 === 0){
+//     nextTurn();
+//   }
+// }
 
 function keyPressed() {
   if (key === "r" || key === "R") {
@@ -48,7 +48,7 @@ function mousePressed() {
 
   if (grid[xcoord][ycoord]===1) {
     grid[xcoord][ycoord]=0;
-    nextTurn();
+    // nextTurn();
   }
   else {
     grid[xcoord][ycoord] = 1;
@@ -56,48 +56,48 @@ function mousePressed() {
 }
 function draw() {
   background(255);
-  autoPlayRequired();
+  // autoPlayRequired();
   displayGrid();
 
 }
 
-function nextTurn() {
-  let next =  makeEmpty2DArray(cols, rows);
-
-  for(let x=0; x<rows; x++){
-    for (let y=0; y<cols; y++){
-      let neighbors = 0;
-      for (let i=-1; i<=1; i++) {
-        for (let j=-1; j<=1; j++){
-          // don't break on edges
-          if (x+i >= 0 && x+i < cols && y+j >= 0 && y+j < rows){
-            neighbors += grid[x+i][y+j];
-          }
-        }
-      }
-      neighbors -= grid[x][y];
-
-      // apply rules of the game
-      if (grid[x][y] === 1) {
-        if (neighbors === 2 || neighbors === 3) {
-          next[x][y] = 1;
-        }
-        else{
-          next[x][y] = 0;
-        }
-      }
-      else {
-        if (neighbors === 3) {
-          next[x][y] - 1;
-        }
-        else{
-          next[x][y] = 0;
-        }
-      }
-    }
-  }
-  grid = next;
-}
+// function nextTurn() {
+//   let next =  makeEmpty2DArray(cols, rows);
+//
+//   for(let x=0; x<rows; x++){
+//     for (let y=0; y<cols; y++){
+//       let neighbors = 0;
+//       for (let i=-1; i<=1; i++) {
+//         for (let j=-1; j<=1; j++){
+//           // don't break on edges
+//           if (x+i >= 0 && x+i < cols && y+j >= 0 && y+j < rows){
+//             neighbors += grid[x+i][y+j];
+//           }
+//         }
+//       }
+//       neighbors -= grid[x][y];
+//
+//       // apply rules of the game
+//       if (grid[x][y] === 1) {
+//         if (neighbors === 2 || neighbors === 3) {
+//           next[x][y] = 1;
+//         }
+//         else{
+//           next[x][y] = 0;
+//         }
+//       }
+//       else {
+//         if (neighbors === 3) {
+//           next[x][y] - 1;
+//         }
+//         else{
+//           next[x][y] = 0;
+//         }
+//       }
+//     }
+//   }
+//   grid = next;
+// }
 function displayGrid() {
   for(let x=0; x<rows; x++){
     for (let y=0; y<cols; y++){
