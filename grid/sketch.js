@@ -1,8 +1,8 @@
 // grid demo game of life
 //Aaron Phillips
 //March 26 2018
-let rows = 10;
-let cols = 10;
+let rows = 30;
+let cols = 30;
 let grid;
 let cellSize;
 
