@@ -12,21 +12,11 @@ function setup() {
   cellSize = width / cols;
   grid = make2DArray(cols, rows);
 }
-// function mousePressed() {
-//   let xcoord = floor(mouseX / cellSize);
-//   let ycoord = floor(mouseY / cellSize);
-//
-//   if (grid[xcoord][ycoord]===1) {
-//     grid[xcoord][ycoord]=0;
-//   }
-//   else {
-//     grid[xcoord][ycoord] = 1;
-//   }
-// }
+
 function draw() {
   background(255);
   displayGrid();
-
+  displayPlayer();
 }
 
 function displayGrid() {
@@ -44,6 +34,12 @@ function displayGrid() {
   }
 
 }
+
+// class for player.
+function displayPlayer(){
+
+}
+
 
 function make2DArray(cols, rows) {
   let randomGrid = [];
