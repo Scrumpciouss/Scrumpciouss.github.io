@@ -1,141 +1,130 @@
-// grid demo game of life
+// grid painter
 //Aaron Phillips
-//March 26 2018
-let rows = 30;
-let cols = 30;
+//April 24 2018
+
+// define global variables
+let rows = 20;
+let cols = 20;
 let grid;
 let cellSize;
-let autoPlay;
+let button;
+let red = 4;
+let green = 2;
+let blue = 3;
+let black = 1;
+let white = 0;
+let currentColor;
 
+// make the window canvas and set grid
 
 function setup() {
-  // createCanvas(600, 600);
-  if (windowWidth > windowHeight) {
-    createCanvas(windowHeight,windowHeight);
+  createCanvas(602, 602);
 
-  }
-  else {
-    createCanvas(windowWidth,windowWidth);
-  }
-  cellSize = width / cols;
+  // showing grid
+  cellSize = (width - 2) / cols;
   grid = make2DArray(cols, rows);
-  autoPlay = false;
+
+  // color button. p5.js
+  button = createButton("green");
+  button = createButton("blue");
+  button = createButton("red");
+  button = createButton("black");
 }
 
-// function autoPlayRequired() {
-//   if (autoPlay && frameCount % 10 === 0){
-//     nextTurn();
-//   }
-// }
 
-function keyPressed() {
-  if (key === "r" || key === "R") {
-    grid = make2DArray(cols, rows);
-  }
-  else if(key === ""){
-    grid = make2DArray(cols, rows);
-  }
-  else if (key === "c" || key === "C") {
-    grid = makeEmpty2DArray(cols, rows);
-  }
-  else if (key === "a" || key === "A"){
-    autoPlay = !autoPlay;
-  }
+function draw() {
+  // change colors value. (r, g, b)
+
+  background(255);
+  displayGrid();
+
+  // cellColor();
+  // currentColor()
 }
+
+
 function mousePressed() {
   let xcoord = floor(mouseX / cellSize);
   let ycoord = floor(mouseY / cellSize);
 
   if (grid[xcoord][ycoord]===1) {
     grid[xcoord][ycoord]=0;
-    // nextTurn();
+
   }
   else {
     grid[xcoord][ycoord] = 1;
   }
-}
-function draw() {
-  background(255);
-  // autoPlayRequired();
-  displayGrid();
 
 }
 
-// function nextTurn() {
-//   let next =  makeEmpty2DArray(cols, rows);
-//
-//   for(let x=0; x<rows; x++){
-//     for (let y=0; y<cols; y++){
-//       let neighbors = 0;
-//       for (let i=-1; i<=1; i++) {
-//         for (let j=-1; j<=1; j++){
-//           // don't break on edges
-//           if (x+i >= 0 && x+i < cols && y+j >= 0 && y+j < rows){
-//             neighbors += grid[x+i][y+j];
-//           }
-//         }
-//       }
-//       neighbors -= grid[x][y];
-//
-//       // apply rules of the game
-//       if (grid[x][y] === 1) {
-//         if (neighbors === 2 || neighbors === 3) {
-//           next[x][y] = 1;
-//         }
-//         else{
-//           next[x][y] = 0;
-//         }
-//       }
-//       else {
-//         if (neighbors === 3) {
-//           next[x][y] - 1;
-//         }
-//         else{
-//           next[x][y] = 0;
-//         }
-//       }
-//     }
-//   }
-//   grid = next;
-// }
+
+function cellColor() {
+
+  let green = color(0, 255, 0);
+  let blue = color(0, 0, 255);
+  let red = color(255, 0, 0);
+  let white = color(255);
+  let black = color(0);
+}
+
 function displayGrid() {
   for(let x=0; x<rows; x++){
     for (let y=0; y<cols; y++){
       if (grid[x][y] === 0) {
-        fill(255);
+        fill(0);
 
       }
       else {
-        fill(0);
+         fill(255);
       }
+
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
   }
 
 }
 
+// reset grid
+function keyPressed() {
+  if (key === "w" || key === "W") {
+    displayGrid(255);
+  }
+}
+
+
+// switches color between white and colour.
+function mousePressed() {
+  let xcoord = floor(mouseX / cellSize);
+  let ycoord = floor(mouseY / cellSize);
+
+  if (grid[xcoord][ycoord]) {
+    grid[xcoord][ycoord]=0;
+
+  }
+  else {
+    grid[xcoord][ycoord] = 1;
+  }
+
+
+
+}
+
+
+
+
+
+// array of grid
 function make2DArray(cols, rows) {
   let randomGrid = [];
   for (let x=0; x<cols; x++) {
     randomGrid.push([]);
     for (let y=0; y<rows; y++){
       if (random(100) < 50){
-        randomGrid[x].push(0);
+        randomGrid[x].push(255);
       }
       else {
-        randomGrid[x].push(1);
+        randomGrid[x].push(255);
       }
-    }
-
-  }
-  return  randomGrid;
-}
-function makeEmpty2DArray(cols, rows) {
-  let randomGrid = [];
-  for (let x=0; x<cols; x++) {
-    randomGrid.push([]);
-    for (let y=0; y<rows; y++){
-      randomGrid[x].push(0);
     }
 
   }
