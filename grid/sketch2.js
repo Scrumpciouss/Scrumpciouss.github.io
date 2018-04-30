@@ -42,7 +42,7 @@ function draw() {
   // currentColor()
 }
 
-
+// switches between balck and white
 function mousePressed() {
   let xcoord = floor(mouseX / cellSize);
   let ycoord = floor(mouseY / cellSize);
@@ -108,7 +108,13 @@ function mousePressed() {
 
 
 }
-
+function displayPixel() {
+  for (let i = 0; i < locations.length; i++) {
+    stroke(0);
+    fill(0);
+    rect(locations[i][0], locations[i][1], segmentSize, segmentSize);
+  }
+}
 
 
 
