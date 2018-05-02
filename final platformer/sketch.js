@@ -28,7 +28,7 @@ function preload() {
   coin = loadImage("images/coin.png");
   box = loadImage("images/boxItem.png");
   fly = loadImage("images/flyFly1.png");
-  p1 = loadImage("images/Ninja.png");
+  // p1 = loadImage("images/Ninja.png");
   slime = loadImage("images/slimeWalk1.png");
   empty = loadImage("images/empty.png");
 }
@@ -81,9 +81,9 @@ function showTile(location, x, y) {
   else if (location === "F") {
     image(fly, x * tileWidth, y * tileHeight, tileWidth, tileHeight);
   }
-  else if (location === "P") {
-    image(p1, x * tileWidth, y * tileHeight, tileWidth, tileHeight);
-  }
+  // else if (location === "P") {
+  //   image(p1, x * tileWidth, y * tileHeight, tileWidth, tileHeight);
+  // }
   else if (location === "S") {
     image(slime, x * tileWidth, y * tileHeight, tileWidth, tileHeight);
   }
